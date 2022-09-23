@@ -6,56 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/buttonD100"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="D100"
-        android:textSize="20sp"
+    <View
+        android:id="@+id/view"
+        android:layout_width="225dp"
+        android:layout_height="205dp"
+        android:layout_marginTop="150dp"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonD20"
-        app:layout_constraintTop_toBottomOf="@+id/buttonD12" />
-
-    <Button
-        android:id="@+id/buttonD20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:text="D20"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/buttonD100"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonD6" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textDado"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginTop="136dp"
-        android:textSize="34sp"
+    <View
+        android:id="@+id/view2"
+        android:layout_width="210dp"
+        android:layout_height="187dp"
+        android:background="@color/purple_red"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <ImageView
+        android:id="@+id/imageDado"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="180dp"
+        android:contentDescription="@string/imagem_do_dado"
+        android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="1" />
-
-    <Button
-        android:id="@+id/buttonD12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="32dp"
-        android:text="D12"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.733"
-        app:layout_constraintStart_toEndOf="@+id/buttonD6"
-        app:layout_constraintTop_toBottomOf="@+id/textDado" />
+        tools:srcCompat="@drawable/dice6_1" />
 
     <Button
         android:id="@+id/buttonD6"
@@ -64,10 +46,51 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="16dp"
-        android:text="D6"
+        android:text="@string/d6"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/buttonD12"
+        app:layout_constraintEnd_toStartOf="@+id/buttonD8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textDado" />
+        app:layout_constraintTop_toBottomOf="@+id/imageDado" />
+
+    <Button
+        android:id="@+id/buttonD8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/d8"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.733"
+        app:layout_constraintStart_toEndOf="@+id/buttonD6"
+        app:layout_constraintTop_toBottomOf="@+id/imageDado"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <Button
+        android:id="@+id/buttonD12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/d12"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonD20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonD6" />
+
+    <Button
+        android:id="@+id/buttonD20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/d20"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonD12"
+        app:layout_constraintTop_toBottomOf="@+id/buttonD8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

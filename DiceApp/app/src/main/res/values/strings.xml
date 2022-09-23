@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DiceApp</string>
+    <string name="d8">D8</string>
+    <string name="d20">D20</string>
+    <string name="d12">D12</string>
+    <string name="d6">D6</string>
+    <string name="imagem_do_dado">Imagem do dado</string>
 </resources>
