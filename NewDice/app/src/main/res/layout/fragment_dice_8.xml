@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dice_8_Fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Button
+        android:id="@+id/buttonVoltar8"
+        android:layout_width="153dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/voltar"
+        android:textSize="20sp"
+        app:cornerRadius="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonJogar8" />
+
+    <Button
+        android:id="@+id/buttonJogar8"
+        android:layout_width="196dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="124dp"
+        android:text="@string/jogar"
+        android:textSize="20sp"
+        app:cornerRadius="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageDado8" />
+
+    <ImageView
+        android:id="@+id/imageDado8"
+        android:layout_width="218dp"
+        android:layout_height="174dp"
+        android:layout_marginTop="128dp"
+        android:contentDescription="@string/dado_de_8_lados"
+        android:src="@drawable/dice8_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

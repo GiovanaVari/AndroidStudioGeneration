@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">NewDice</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="jogar">Jogar</string>
+    <string name="voltar">Voltar</string>
+    <string name="dado_de_6_lados">Dado de 6 lados</string>
+    <string name="dado_de_8_lados">Dado de 8 lados</string>
+    <string name="dado_de_12_lados">Dado de 12 lados</string>
+    <string name="dado_de_20_lados">Dado de 20 lados</string>
+    <string name="fundo_com_muitos_dados">fundo com muitos dados</string>
+    <string name="imagem_de_um_dado_de_tenis_com_um_machado_e_fumando_charuto">Imagem de um dado de tenis, com um machado e fumando charuto</string>
+    <string name="d6">D6</string>
+    <string name="d8">D8</string>
+    <string name="d12">D12</string>
+    <string name="d20">D20</string>
+</resources>

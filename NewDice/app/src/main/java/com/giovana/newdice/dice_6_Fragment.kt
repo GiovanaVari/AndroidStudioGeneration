@@ -1,4 +1,4 @@
-package com.giovana.todoandroid
+package com.giovana.newdice
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,12 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
-import com.giovana.todoandroid.databinding.FragmentFormBinding
-import com.giovana.todoandroid.databinding.FragmentListBinding
 
-class FormFragment : Fragment() {
-
-    private lateinit var binding: FragmentFormBinding
+class dice_6_Fragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,14 +16,17 @@ class FormFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         //Inflando e retornando a fragment_form
-        binding = FragmentFormBinding.inflate(layoutInflater, container, false)
+        val view = inflater.inflate(R.layout.fragment_dice_6, container, false)
+
+        //Referenciando o botão
+        val buttonVoltar = view.findViewById<Button>(R.id.buttonVoltar6)
 
         //Quando clicar no botão
-        binding.buttonSalvar.setOnClickListener {
+        buttonVoltar.setOnClickListener {
 
             //dando a ação. Para onde ira
-            findNavController().navigate(R.id.action_formFragment_to_listFragment)
+            findNavController().navigate(R.id.action_dice_6Fragment_to_menuFragment)
         }
-        return binding.root
+        return view
     }
 }

@@ -4,21 +4,17 @@ plugins {
 }
 
 android {
-    namespace 'com.giovana.todoandroid'
+    namespace 'com.giovana.newdice'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.giovana.todoandroid"
+        applicationId "com.giovana.newdice"
         minSdk 26
         targetSdk 32
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    viewBinding{
-        enabled = true
     }
 
     buildTypes {

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.giovana.newdice.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_dice_6Fragment"
+            app:destination="@id/dice_6_Fragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_menuFragment_to_dice_8_Fragment"
+            app:destination="@id/dice_8_Fragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_menuFragment_to_dice_12_Fragment"
+            app:destination="@id/dice_12_Fragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_menuFragment_to_dice_20_Fragment"
+            app:destination="@id/dice_20_Fragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/dice_6_Fragment"
+        android:name="com.giovana.newdice.dice_6Fragment"
+        android:label="fragment_dice_6"
+        tools:layout="@layout/fragment_dice_6" >
+        <action
+            android:id="@+id/action_dice_6Fragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dice_8_Fragment"
+        android:name="com.giovana.newdice.dice_8_Fragment"
+        android:label="fragment_dice_8_"
+        tools:layout="@layout/fragment_dice_8" >
+        <action
+            android:id="@+id/action_dice_8_Fragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dice_12_Fragment"
+        android:name="com.giovana.newdice.dice_12_Fragment"
+        android:label="fragment_dice_12_"
+        tools:layout="@layout/fragment_dice_12_" >
+        <action
+            android:id="@+id/action_dice_12_Fragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dice_20_Fragment"
+        android:name="com.giovana.newdice.dice_20_Fragment"
+        android:label="fragment_dice_20_"
+        tools:layout="@layout/fragment_dice_20_" >
+        <action
+            android:id="@+id/action_dice_20_Fragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+</navigation>
