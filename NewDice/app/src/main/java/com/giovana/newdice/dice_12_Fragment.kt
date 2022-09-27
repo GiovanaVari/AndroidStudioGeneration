@@ -5,55 +5,59 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
+import androidx.navigation.fragment.findNavController
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [dice_12_Fragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class dice_12_Fragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dice_12_, container, false)
-    }
+        //Inflando e retornando a fragment_form
+        val view = inflater.inflate(R.layout.fragment_dice_12_, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment dice_12_Fragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            dice_12_Fragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        fun rolarDados(lados: Int) {
+            val rolagem = (1..12).random()
+
+            //val textDado = findViewById<TextView>(R.id.textDado)
+            val imageDado12 = view.findViewById<ImageView>(R.id.imageDado12)
+            //textDado.text = rolagem.toString()
+
+            when (rolagem) {
+                1 -> imageDado12.setImageResource(R.drawable.dice12_1)
+                2 -> imageDado12.setImageResource(R.drawable.dice12_2)
+                3 -> imageDado12.setImageResource(R.drawable.dice12_3)
+                4 -> imageDado12.setImageResource(R.drawable.dice12_4)
+                5 -> imageDado12.setImageResource(R.drawable.dice12_5)
+                6 -> imageDado12.setImageResource(R.drawable.dice12_6)
+                7 -> imageDado12.setImageResource(R.drawable.dice12_7)
+                8 -> imageDado12.setImageResource(R.drawable.dice12_8)
+                9 -> imageDado12.setImageResource(R.drawable.dice12_9)
+                10 -> imageDado12.setImageResource(R.drawable.dice12_10)
+                11 -> imageDado12.setImageResource(R.drawable.dice12_11)
+                12 -> imageDado12.setImageResource(R.drawable.dice12_12)
             }
+        }
+
+        val buttonJogar12 = view.findViewById<Button>(R.id.buttonJogar12)
+
+        buttonJogar12.setOnClickListener {
+            // Toast.makeText(this, "Botão clicado", Toast.LENGTH_LONG).show()
+            rolarDados(12)
+        }
+
+        //Referenciando o botão
+        val buttonVoltar = view.findViewById<Button>(R.id.buttonVoltar12)
+
+        //Quando clicar no botão
+        buttonVoltar.setOnClickListener {
+
+            //dando a ação. Para onde ira
+            findNavController().navigate(R.id.action_dice_12_Fragment_to_menuFragment)
+        }
+        return view
     }
 }

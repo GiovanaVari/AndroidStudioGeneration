@@ -9,6 +9,21 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <ImageView
+        android:id="@+id/imageFundo3"
+        android:layout_width="411dp"
+        android:layout_height="735dp"
+        android:alpha="0.7"
+        android:contentDescription="@string/fundo_com_muitos_dados"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fundo_dice"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
+
     <Button
         android:id="@+id/buttonVoltar8"
         android:layout_width="153dp"

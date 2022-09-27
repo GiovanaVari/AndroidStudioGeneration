@@ -5,9 +5,24 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dice_6Fragment">
+    tools:context=".dice_20_Fragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/imageFundo4"
+        android:layout_width="411dp"
+        android:layout_height="735dp"
+        android:alpha="0.7"
+        android:contentDescription="@string/fundo_com_muitos_dados"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fundo_dice"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
 
     <ImageView
         android:id="@+id/imageDado12"

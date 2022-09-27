@@ -18,13 +18,40 @@ class MenuFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_menu, container, false)
 
         //Referenciando o botão
-        val button = view.findViewById<Button>(R.id.buttond6)
+        val buttond6 = view.findViewById<Button>(R.id.buttond6)
 
         //Quando clicar no botão
-        button.setOnClickListener {
+        buttond6.setOnClickListener {
 
             //dando a ação. Para onde ira
-            findNavController().navigate(R.id.action_dice_6Fragment_to_menuFragment)
+            findNavController().navigate(R.id.action_menuFragment_to_dice_6_Fragment)
+        }
+
+        val buttond8 = view.findViewById<Button>(R.id.buttond8)
+
+        //Quando clicar no botão
+        buttond8.setOnClickListener {
+
+            //dando a ação. Para onde ira
+            findNavController().navigate(R.id.action_menuFragment_to_dice_8_Fragment)
+        }
+
+        val buttond12 = view.findViewById<Button>(R.id.buttond12)
+
+        //Quando clicar no botão
+        buttond12.setOnClickListener {
+
+            //dando a ação. Para onde ira
+            findNavController().navigate(R.id.action_menuFragment_to_dice_12_Fragment)
+        }
+
+        val buttond20 = view.findViewById<Button>(R.id.buttond20)
+
+        //Quando clicar no botão
+        buttond20.setOnClickListener {
+
+            //dando a ação. Para onde ira
+            findNavController().navigate(R.id.action_menuFragment_to_dice_20_Fragment)
         }
 
         return view
