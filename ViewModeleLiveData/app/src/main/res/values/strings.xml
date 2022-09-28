@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ViewModel e LiveData</string>
+    <string name="clique">Clique</string>
+</resources>
