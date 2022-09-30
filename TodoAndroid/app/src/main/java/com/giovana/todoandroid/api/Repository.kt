@@ -1,6 +1,7 @@
 package com.giovana.todoandroid.api
 
 import com.giovana.todoandroid.model.Categoria
+import com.giovana.todoandroid.model.Tarefa
 import retrofit2.Response
 
 class Repository {
@@ -8,4 +9,9 @@ class Repository {
     suspend fun listCategoria(): Response<List<Categoria>> {
         return RetrofitInstance.api.listCategoria()
     }
+
+    suspend fun addTarefa(tarefa: Tarefa): Response<Tarefa>{
+        return RetrofitInstance.api.addTarefa(tarefa)
+    }
+
 }
