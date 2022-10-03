@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.giovana.projetointegradorgen_as.databinding.CardLayoutBinding
 import com.giovana.projetointegradorgen_as.model.Postagem
 
+
 class PostagemAdapter: RecyclerView.Adapter<PostagemAdapter.PostagemViewHolder>() {
 
     private  var listPostagem = emptyList<Postagem>()
@@ -28,8 +29,8 @@ class PostagemAdapter: RecyclerView.Adapter<PostagemAdapter.PostagemViewHolder>(
         holder.binding.textNome.text = postagem.nome
         holder.binding.textImage.text = postagem.image
         holder.binding.textDescricao.text = postagem.descricao
-        holder.binding.textData.text = postagem.data
-        holder.binding.textTema.text = postagem.tema
+//        holder.binding.textData.text = postagem.data
+//        holder.binding.textTema.text = postagem.tema.tema
     }
 
     override fun getItemCount(): Int {
