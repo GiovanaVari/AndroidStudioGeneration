@@ -1,6 +1,5 @@
-package com.junior.testepi.di
+package com.giovana.projetointegradorgen_as
 
-import com.junior.testepi.api.Repository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,7 +12,7 @@ object ServiceModule {
 
     @Singleton
     @Provides
-    fun returnRepository(): Repository{
+    fun returnRepository(): Repository {
         return Repository()
     }
 }

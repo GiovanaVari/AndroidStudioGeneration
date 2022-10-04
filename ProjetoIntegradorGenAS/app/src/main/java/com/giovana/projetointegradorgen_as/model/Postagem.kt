@@ -2,10 +2,10 @@ package com.giovana.projetointegradorgen_as.model
 
 data class Postagem(
     var id: Long,
-    var nome: String,
-    var image: String,
+//    var nome: String,
+    var imagem: String,
     var descricao: String,
 //    var data: String,
-//    var tema: Tema
+    var tema: Tema
 ) {
 }

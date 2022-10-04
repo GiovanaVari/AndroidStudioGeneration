@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListFragment" >
+    tools:context=".ListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerPostagem"
@@ -20,8 +20,8 @@
         android:id="@+id/floatingAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="48dp"
         android:clickable="true"
         android:contentDescription="@string/btnPostagem"
         android:focusable="true"
@@ -30,5 +30,29 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:src="@drawable/photoadd"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/floatingUser"
+        app:layout_constraintEnd_toEndOf="@+id/floatingUser"
+        app:layout_constraintStart_toStartOf="@+id/floatingUser" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:src="@drawable/user"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/floatingAdd"
+        app:layout_constraintEnd_toEndOf="@+id/floatingAdd"
+        app:layout_constraintStart_toStartOf="@+id/floatingAdd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

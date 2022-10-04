@@ -1,15 +1,15 @@
-package com.junior.testepi.api
+package com.giovana.projetointegradorgen_as
 
-import com.junior.testepi.model.Postagem
-import com.junior.testepi.model.Tema
+import com.giovana.projetointegradorgen_as.model.Postagem
+import com.giovana.projetointegradorgen_as.model.Tema
 import retrofit2.Response
 
 class Repository {
-    suspend fun listTema(): Response<List<Tema>>{
+    suspend fun listTema(): Response<List<Tema>> {
         return RetrofitInstance.api.listTema()
     }
 
-    suspend fun addPost(postagem: Postagem): Response<Postagem>{
+    suspend fun addPost(postagem: Postagem): Response<Postagem> {
         return RetrofitInstance.api.addPost(postagem)
     }
 }

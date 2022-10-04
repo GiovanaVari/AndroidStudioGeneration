@@ -2,11 +2,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape>
-    <gradient
-        android:startColor = "#18749A"
-        android:endColor = "#BCE5F6"
-        android:angle = "-90"
-        />
+            <gradient android:angle="-90" android:endColor="#BCE5F6" android:startColor="#18749A" />
         </shape>
     </item>
 </selector>

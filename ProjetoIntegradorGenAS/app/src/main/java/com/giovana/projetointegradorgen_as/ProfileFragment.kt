@@ -1,13 +1,11 @@
-package com.junior.testepi
+package com.giovana.projetointegradorgen_as
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.junior.testepi.databinding.FragmentFormBinding
-import com.junior.testepi.databinding.FragmentProfileBinding
-
+import com.giovana.projetointegradorgen_as.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
