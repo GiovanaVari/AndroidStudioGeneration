@@ -14,4 +14,10 @@ class Repository {
         return RetrofitInstance.api.addTarefa(tarefa)
     }
 
+    //----- 31 - Listando Tarefas-----p2
+    //{
+    suspend fun listTarefa(): Response<List<Tarefa>>{
+        return RetrofitInstance.api.listTarefa()
+    }
+//}
 }

@@ -18,4 +18,10 @@ interface ApiService {
         @Body tarefa: Tarefa
     ): Response<Tarefa>
 
+    //------31 - Listando Tarefas------p1
+    //{
+    //Faz uma requisicao e devolve a lista tarefa
+    @GET("tarefa")
+    suspend fun listTarefa():Response<List<Tarefa>>
+//}
 }
