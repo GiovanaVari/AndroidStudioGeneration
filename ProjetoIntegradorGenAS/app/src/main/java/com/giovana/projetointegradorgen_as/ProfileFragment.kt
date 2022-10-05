@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.giovana.projetointegradorgen_as.databinding.FragmentProfileBinding
 
+
 class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
     override fun onCreateView(

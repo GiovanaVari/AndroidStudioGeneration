@@ -1,4 +1,4 @@
-package com.giovana.projetointegradorgen_as
+package com.giovana.projetointegradorgen_as.api
 
 import com.giovana.projetointegradorgen_as.util.Constants
 import retrofit2.Retrofit

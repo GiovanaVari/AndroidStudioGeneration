@@ -10,6 +10,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.giovana.projetointegradorgen_as.databinding.FragmentFormBinding
 import com.giovana.projetointegradorgen_as.model.Postagem
@@ -21,7 +22,6 @@ class FormFragment : Fragment() {
     private lateinit var binding: FragmentFormBinding
     private val mainViewModel: MainViewModel by activityViewModels()
     private var temaSelecionado = 0L
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -83,10 +83,10 @@ class FormFragment : Fragment() {
         if (validarCampos(desc, image)) {
             val postagem = Postagem(0, image, desc, tema)
             mainViewModel.addPost(postagem)
-            Toast.makeText(context, "Tarefa criada!", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "Tarefa criada 😎🍭💅", Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_formFragment_to_listFragment)
         } else {
-            Toast.makeText(context, "Verique os campos!", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "Verique os campos 😢😶‍🌫️🤯", Toast.LENGTH_LONG).show()
         }
     }
 

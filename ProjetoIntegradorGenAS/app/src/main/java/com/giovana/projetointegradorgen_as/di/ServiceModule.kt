@@ -1,5 +1,6 @@
-package com.giovana.projetointegradorgen_as
+package com.giovana.projetointegradorgen_as.di
 
+import com.giovana.projetointegradorgen_as.api.Repository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

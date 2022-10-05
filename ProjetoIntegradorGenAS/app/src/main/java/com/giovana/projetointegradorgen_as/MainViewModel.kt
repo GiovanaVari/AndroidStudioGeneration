@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.giovana.projetointegradorgen_as.api.Repository
 import com.giovana.projetointegradorgen_as.model.Postagem
 import com.giovana.projetointegradorgen_as.model.Tema
 import dagger.hilt.android.lifecycle.HiltViewModel

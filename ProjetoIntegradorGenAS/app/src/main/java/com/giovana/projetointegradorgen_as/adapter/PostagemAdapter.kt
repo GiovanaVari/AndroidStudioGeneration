@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.giovana.projetointegradorgen_as.databinding.CardLayoutBinding
 import com.giovana.projetointegradorgen_as.model.Postagem
 
-
 class PostagemAdapter : RecyclerView.Adapter<PostagemAdapter.PostagemViewHolder>() {
 
     private var listPostagem = emptyList<Postagem>()

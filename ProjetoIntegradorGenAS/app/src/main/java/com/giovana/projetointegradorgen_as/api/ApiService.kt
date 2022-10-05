@@ -1,4 +1,4 @@
-package com.giovana.projetointegradorgen_as
+package com.giovana.projetointegradorgen_as.api
 
 import com.giovana.projetointegradorgen_as.model.Postagem
 import com.giovana.projetointegradorgen_as.model.Tema
