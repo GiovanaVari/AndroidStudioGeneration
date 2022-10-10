@@ -9,12 +9,17 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.giovana.todoandroid.adapter.TarefaAdapter
+import com.giovana.todoandroid.adapter.TaskClickListener
 import com.giovana.todoandroid.databinding.FragmentListBinding
 import com.giovana.todoandroid.model.Tarefa
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class ListFragment : Fragment() {
-
+//------35 - Atualizando Tarefas------p6
+//{
+//class ListFragment : Fragment() {
+//Implementando a interface TaskClickListener
+class ListFragment : Fragment(), TaskClickListener {
+//}
     private lateinit var binding: FragmentListBinding
 
     //----- 31 - Listando Tarefas ------p6
@@ -36,8 +41,12 @@ class ListFragment : Fragment() {
         mainViewModel.listTarefa()
         //}
 
+        //------35 - Atualizando Tarefas------p10
+        //{
+        //colocando o this, mainViewModel
         //Configuração do RecyclerView
-        val adapter = TarefaAdapter()
+        val adapter = TarefaAdapter(this, mainViewModel)
+        //}
         binding.recyclerTarefa.layoutManager = LinearLayoutManager(context)
         binding.recyclerTarefa.adapter = adapter
         binding.recyclerTarefa.setHasFixedSize(true)
@@ -45,6 +54,11 @@ class ListFragment : Fragment() {
         //Quando clicar no botão
         binding.floatingAdd.setOnClickListener {
 
+            //------36 - Atualizando Tarefas II ------p3
+            //{
+            //quando usar o botao, entrara na fragment com os campos vazios
+            mainViewModel.tarefaSeleciona = null
+            //}
             //dando a ação. Para onde ira
             findNavController().navigate(R.id.action_listFragment_to_formFragment)
         }
@@ -61,5 +75,13 @@ class ListFragment : Fragment() {
         //}
 
         return binding.root
+    }
+
+    override fun onTaskClickListener(tarefa: Tarefa) {
+        //------35 - Atualizando Tarefas------p7
+        //{
+        mainViewModel.tarefaSeleciona = tarefa
+        findNavController().navigate(R.id.action_listFragment_to_formFragment)
+        //}
     }
 }

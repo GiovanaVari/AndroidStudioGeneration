@@ -6,6 +6,7 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 
 interface ApiService {
 
@@ -23,5 +24,14 @@ interface ApiService {
     //Faz uma requisicao e devolve a lista tarefa
     @GET("tarefa")
     suspend fun listTarefa():Response<List<Tarefa>>
+
+    //------35 - Atualizando Tarefas------p1
+    //{
+    @PUT("tarefa")
+    suspend fun updateTarefa(
+        @Body tarefa: Tarefa
+    ): Response<Tarefa>
+    //}
+
 //}
 }

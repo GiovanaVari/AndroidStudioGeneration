@@ -3,11 +3,19 @@ package com.giovana.todoandroid.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.giovana.todoandroid.MainViewModel
 import com.giovana.todoandroid.databinding.CardLayoutBinding
 import com.giovana.todoandroid.model.Tarefa
 import java.text.SimpleDateFormat
-
-class TarefaAdapter : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>() {
+//------35 - Atualizando Tarefas------p8
+//{
+//criando um construtor na class TarefaAdapter
+class TarefaAdapter (
+    val taskClickListener: TaskClickListener,
+    //para atualizar de forma dinamica
+    val mainViewModel: MainViewModel
+        ): RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>() {
+//}
 
     private var listTarefa = emptyList<Tarefa>()
 
@@ -37,6 +45,25 @@ class TarefaAdapter : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>() {
         holder.binding.switchAtivo.isChecked = tarefa.status
         holder.binding.textCategoria.text = tarefa.categoria.descricao
 
+        //------35 - Atualizando Tarefas------p9
+        //{
+
+        holder.itemView.setOnClickListener {
+            taskClickListener.onTaskClickListener(tarefa)
+        }
+
+        //------36 - Atualizando Tarefas II ------p4
+        //{
+        //para trocar o status pela FormFragment msm e guardar a mudança no bd
+        holder.binding.switchAtivo
+            .setOnCheckedChangeListener { compoundButton, ativo ->
+                tarefa.status = ativo
+                mainViewModel.updateTarefa(tarefa)
+            }
+        //}
+
+        //}
+
     }
 
     override fun getItemCount(): Int {
@@ -44,7 +71,13 @@ class TarefaAdapter : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>() {
     }
 
     fun setList(list: List<Tarefa>) {
-        listTarefa = list
+        //------36 - Atualizando Tarefas II ------p2
+        //{
+        //ordenando pelo id
+        //crescente -> "listTarefa = list.sortedBy { it.id }"
+        //decrescente
+        listTarefa = list.sortedByDescending { it.id }
+        //}
         notifyDataSetChanged()
     }
 

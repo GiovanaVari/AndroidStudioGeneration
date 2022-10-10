@@ -31,6 +31,11 @@ class FormFragment : Fragment(), TimerPickerListener {
     //Armazena o Id da categoria que sera usada
     private var categoriaSelecionada = 0L
 
+    //------35 - Atualizando Tarefas------p11
+    //{
+    private var tarefaSelecionada: Tarefa? = null
+    //}
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,6 +43,12 @@ class FormFragment : Fragment(), TimerPickerListener {
         // Inflate the layout for this fragment
         //Inflando e retornando a fragment_form
         binding = FragmentFormBinding.inflate(layoutInflater, container, false)
+
+        //------35 - Atualizando Tarefas------p13
+        //{
+        //chamando os dados
+        carregarDados()
+        //}
 
         mainViewModel.listCategoria()
 
@@ -125,9 +136,23 @@ class FormFragment : Fragment(), TimerPickerListener {
         val categoria = Categoria(categoriaSelecionada, null, null)
 
         if (validarCampos(nome, desc, resp)) {
-            val tarefa = Tarefa(0, nome, desc, resp, data, status, categoria)
-            mainViewModel.addTarefa(tarefa)
-            Toast.makeText(context, "Tarefa Criada!", Toast.LENGTH_SHORT).show()
+
+            //------36 - Atualizando Tarefas II ------p1
+            //{
+            val salvar: String
+            //verifica se tem uma tarefa selecionada
+            //se for diferente de nula, atualiza
+            if (tarefaSelecionada != null){
+                salvar = "Tarefa Atualizada"
+                val tarefa = Tarefa(tarefaSelecionada?.id!!, nome, desc, resp, data, status, categoria)
+                mainViewModel.addTarefa(tarefa)
+            }else {
+                salvar = "Tarefa Criada!"
+                val tarefa = Tarefa(0, nome, desc, resp, data, status, categoria)
+                mainViewModel.addTarefa(tarefa)
+            }
+            Toast.makeText(context, salvar, Toast.LENGTH_SHORT).show()
+            //}
             //dando a ação. Para onde ira
             findNavController().navigate(R.id.action_formFragment_to_listFragment)
 
@@ -136,6 +161,21 @@ class FormFragment : Fragment(), TimerPickerListener {
         }
 
     }
+
+    //------35 - Atualizando Tarefas------p12
+    //{
+    private fun carregarDados(){
+        tarefaSelecionada = mainViewModel.tarefaSeleciona
+        //se for diferente de nulo carrega os dados
+        if(tarefaSelecionada != null){
+            binding.editNome.setText(tarefaSelecionada?.nome)
+            binding.editDescricao.setText(tarefaSelecionada?.descricao)
+            binding.editResponsavel.setText(tarefaSelecionada?.responsavel)
+            binding.editData.setText(tarefaSelecionada?.data)
+            binding.switchAtivoCard.isChecked = tarefaSelecionada?.status!!
+        }
+    }
+    //}
 
     //pega a data e joga na variavel dataSelecionada da mainViewModel
     override fun onDateSelected(date: LocalDate) {
