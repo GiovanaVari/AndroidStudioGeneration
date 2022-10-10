@@ -15,6 +15,7 @@ import kotlinx.coroutines.launch
 //Room pt9{
 //Room Video 2 pt1{
 //editando a linha abaixo
+//Para usar em um contexto geral no app
 // class MainViewModel (context: Context) : ViewModel() {
 class MainViewModel (application: Application) : AndroidViewModel(application) {
 //}

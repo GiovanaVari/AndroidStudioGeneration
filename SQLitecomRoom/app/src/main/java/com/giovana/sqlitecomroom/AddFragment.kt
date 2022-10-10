@@ -28,6 +28,7 @@ class AddFragment : Fragment() {
         binding = FragmentAddBinding.inflate(layoutInflater, container, false)
 
         //Room Video 2 pt4{
+        //para instanciar a mainviewmodel
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         //}
 
@@ -39,25 +40,32 @@ class AddFragment : Fragment() {
     }
 
     //Room Video 2 pt0.1{
+    //verificando se os campos estão vazios
     fun verificarCampos(nome : String, sobrenome : String, idade : String): Boolean{
+        //se qualquer um estiver vazio, ele ira retornar false
         return !(nome == "" || sobrenome == "" || idade == "")
     }
 
     fun inserirNoBanco(){
+        //pegando informações digitadas pelo user
         val nome = binding.editNome.text.toString()
         val sobrenome = binding.editSobrenome.text.toString()
         val idade = binding.editIdade.text.toString()
 
+        //verificando se esta preenchido corretamente
         if(verificarCampos(nome,sobrenome,idade)){
             val user = Usuario(0, nome, sobrenome, idade.toInt())
+            //}
             //Room Video 2 pt5{
+            //chamando o metodo
             mainViewModel.addUser(user)
+            //dando feedback para o usuario
             Toast.makeText(context, "Usuario Adicionado!", Toast.LENGTH_LONG).show()
+            //para navegar para a fragment list
             findNavController().navigate(R.id.action_addFragment_to_listFragment)
         }else{
             Toast.makeText(context, "Preencha todos os campos!", Toast.LENGTH_LONG).show()
         }
         //}
     }
-    //}
 }

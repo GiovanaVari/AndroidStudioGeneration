@@ -17,6 +17,7 @@ class ListFragment : Fragment() {
     private lateinit var binding: FragmentListBinding
 
     //Room video3 pt8{
+    //para puxa a lista
     private lateinit var mainViewModel: MainViewModel
     //}
 
@@ -39,6 +40,7 @@ class ListFragment : Fragment() {
         //}
 
         //Room video3 pt10{
+        //para observar a lista. tras os dados do banco
         mainViewModel.selectUsers.observe(viewLifecycleOwner){
             response -> adapter.setList(response)
         }
