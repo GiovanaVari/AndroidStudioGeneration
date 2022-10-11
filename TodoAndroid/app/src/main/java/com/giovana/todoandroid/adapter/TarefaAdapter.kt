@@ -1,5 +1,7 @@
 package com.giovana.todoandroid.adapter
 
+import android.app.AlertDialog
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +15,11 @@ import java.text.SimpleDateFormat
 class TarefaAdapter (
     val taskClickListener: TaskClickListener,
     //para atualizar de forma dinamica
-    val mainViewModel: MainViewModel
+    val mainViewModel: MainViewModel,
+    //------37 - Deletando Tarefas (criando o alerta)------p5
+    //{
+    val context: Context
+    //}
         ): RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>() {
 //}
 
@@ -61,9 +67,19 @@ class TarefaAdapter (
                 mainViewModel.updateTarefa(tarefa)
             }
         //}
-
         //}
 
+        //------37 - Deletando Tarefas------p4
+        //{
+        //ultimo passo para deletar
+        holder.binding.buttonDeletar.setOnClickListener {
+            //mainViewModel.deleteTarefa(tarefa.id)
+            //------37 - Deletando Tarefas (criando o alerta)------p7
+            //{
+            showAlertDialog(tarefa.id)
+            //}
+        }
+        //}
     }
 
     override fun getItemCount(): Int {
@@ -80,5 +96,19 @@ class TarefaAdapter (
         //}
         notifyDataSetChanged()
     }
+    //------37 - Deletando Tarefas (criando o alerta)------p6
+    //{
+    private fun showAlertDialog(id: Long){
+        AlertDialog.Builder(context)
+            .setTitle("Excluir Tarefa")
+            .setMessage("Deseja Excluir a Tarefa?")
+            .setPositiveButton("Sim"){
+                _,_ -> mainViewModel.deleteTarefa(id)
+            }
+            .setNegativeButton("Não"){
+                _,_ ->
+            }.show()
+    }
+    //}
 
 }

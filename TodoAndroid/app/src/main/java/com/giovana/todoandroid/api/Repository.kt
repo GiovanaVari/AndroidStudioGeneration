@@ -26,5 +26,12 @@ class Repository {
     suspend fun updateTarefa(tarefa: Tarefa): Response<Tarefa>{
         return RetrofitInstance.api.updateTarefa(tarefa)
     }
+
+    //------37 - Deletando Tarefas------p2
+    //{
+    suspend fun deleteTarefa(id: Long): Response<Tarefa>{
+        return RetrofitInstance.api.deleteTarefa(id)
+    }
+    //}
     //}
 }

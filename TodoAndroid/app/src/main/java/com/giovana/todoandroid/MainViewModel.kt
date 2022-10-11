@@ -108,4 +108,17 @@ class MainViewModel @Inject constructor(
     }
     //}
 
+    //------37 - Deletando Tarefas------p3
+    //{
+    fun deleteTarefa(id: Long){
+        viewModelScope.launch {
+            try {
+                repository.deleteTarefa(id)
+                listTarefa()
+            }catch (e: Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+    //}
 }

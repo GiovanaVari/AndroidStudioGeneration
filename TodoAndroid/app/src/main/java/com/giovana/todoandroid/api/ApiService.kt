@@ -3,10 +3,7 @@ package com.giovana.todoandroid.api
 import com.giovana.todoandroid.model.Categoria
 import com.giovana.todoandroid.model.Tarefa
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -24,6 +21,7 @@ interface ApiService {
     //Faz uma requisicao e devolve a lista tarefa
     @GET("tarefa")
     suspend fun listTarefa():Response<List<Tarefa>>
+    //}
 
     //------35 - Atualizando Tarefas------p1
     //{
@@ -33,5 +31,11 @@ interface ApiService {
     ): Response<Tarefa>
     //}
 
-//}
+    //------37 - Deletando Tarefas------p1
+    //{
+    @DELETE("tarefa/{id}")
+    suspend fun deleteTarefa(
+        @Path("id") id: Long
+    ): Response<Tarefa>
+    //}
 }

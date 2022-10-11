@@ -45,7 +45,10 @@ class ListFragment : Fragment(), TaskClickListener {
         //{
         //colocando o this, mainViewModel
         //Configuração do RecyclerView
-        val adapter = TarefaAdapter(this, mainViewModel)
+        //------37 - Deletando Tarefas (criando o alerta)------p8
+        //{
+        val adapter = TarefaAdapter(this, mainViewModel, requireContext())
+        //}
         //}
         binding.recyclerTarefa.layoutManager = LinearLayoutManager(context)
         binding.recyclerTarefa.adapter = adapter
